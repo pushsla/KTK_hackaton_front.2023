@@ -1,0 +1,33 @@
+# Local profile
+.profile
+
+# Custom ignore
+*.ignored.*
+
+# Editor custom data
+.idea
+.vscode
+
+# Caches
+.DS_Store
+__pycache__
+
+# Dev envs
+venv*
+node_modules
+
+# Builds
+dist
+build
+target
+.svelte-kit
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Pipfile.lock
+Cargo.lock
+
+# Custom track
+!*.tracked.*
