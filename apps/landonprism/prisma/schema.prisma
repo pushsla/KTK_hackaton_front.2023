@@ -1,0 +1,132 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+// REG
+
+model Reg_approval{
+  id Int @id @default(autoincrement())
+  trait String
+
+  registrations Reg_registration[]
+}
+
+model Reg_contact{
+  id Int @id @default(autoincrement())
+  trait String
+
+  registrations Reg_registration[]
+}
+
+model Reg_region{
+  id Int @id
+  name String
+
+  registrations Reg_registration[]
+}
+
+model Reg_user{
+  id Int @id @default(autoincrement())
+  loginHash String
+  secretHash String
+
+  registration Reg_registration?
+}
+
+model Reg_registration{
+  id Int @id @default(autoincrement())
+
+  user Reg_user @relation(fields: [userId], references: [id])
+  userId Int @unique
+
+  approval Reg_approval @relation(fields: [approvalId], references: [id])
+  approvalId Int
+
+  contact Reg_contact @relation(fields: [contactId], references: [id])
+  contactId Int
+
+  region Reg_region @relation(fields: [regionId], references: [id])
+  regionId Int
+
+  firstName String
+  lastName String
+
+  leaderOf Reg_team?
+}
+
+model Reg_team{
+  id Int @id @default(autoincrement())
+  name String
+
+  captain Reg_registration @relation(fields: [captainId], references: [id])
+  captainId Int @unique
+
+  stats Reg_teamstats[]
+}
+
+model Reg_teamstats{
+  id Int @id @default(autoincrement())
+  date DateTime
+  casusName String
+  casusScore Int
+  casusResult String?
+
+  team Reg_team @relation(fields: [teamId], references: [id])
+  teamId Int
+}
+
+// CMS
+
+model Cms_program{
+  id Int @id @default(autoincrement())
+  date DateTime
+  title String
+
+  entries Cms_programentry[]
+}
+
+model Cms_programentry{
+  id Int @id @default(autoincrement())
+  time DateTime
+  preambule String?
+  ambule String
+  postambule String?
+  locale String
+
+  program Cms_program @relation(fields: [programId], references: [id])
+  programId Int
+}
+
+model Cms_partners{
+  id Int @id @default(autoincrement())
+  icon Bytes
+  title String
+  text String?
+}
+
+model Cms_speakers{
+  id Int @id @default(autoincrement())
+
+  name String
+  company String
+}
+
+model Cms_stats{
+  id Int @id @default(autoincrement())
+
+  registrationOpen Boolean
+  registerDeadline DateTime
+
+  hackatonFound Int
+  hackatonWinners Int
+  hackatonOffers Int
+}
