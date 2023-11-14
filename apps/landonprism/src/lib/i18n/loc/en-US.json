@@ -111,18 +111,18 @@
     "registerform": {
         "title": "Registration",
         "labels": {
-            "birth": "",
-            "contact": "",
-            "contacttype": "",
-            "lastname": "",
-            "name": "",
-            "region": "",
-            "hasteam": "",
-            "teamsel": "",
-            "teamcode": "",
-            "wantteam": "",
-            "teamname": "",
-            "teamsizewarning": ""
+            "birth": "Date of Birth",
+            "contact": "Contact address",
+            "contacttype": "A way to contact you",
+            "lastname": "Surname",
+            "name": "Name",
+            "region": "Region",
+            "hasteam": "Do you have a team",
+            "teamsel": "Choose your team",
+            "teamcode": "Enter the invitation code",
+            "wantteam": "Do you want to participate in a hackathon?",
+            "teamname": "Give your team a name",
+            "teamsizewarning": "The team will be registered as soon as you invite at least 3 people. You can do this in your personal account."
         }
     }
 }
