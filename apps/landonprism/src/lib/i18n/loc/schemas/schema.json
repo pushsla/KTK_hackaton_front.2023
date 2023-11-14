@@ -227,6 +227,9 @@
                     "type": "string",
                     "description": "form title"
                 },
+                "submit": {
+                    "type": "string"
+                },
                 "labels": {
                     "type": "object",
                     "properties": {
@@ -287,5 +290,5 @@
         }
     },
 
-    "required": ["landing", "registerform"]
+    "required": ["landing", "registerform", "submit"]
 }

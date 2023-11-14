@@ -75,13 +75,16 @@
         border-color: #000;
         min-width: 85%;
         min-height: 20rem;
-        max-height: 25rem;
+        max-height: 21rem;
         overflow-x: hidden;
-        overflow-y: auto;
         max-width: 98%;
     }
     .window__content{
         padding: .7rem;
+        min-height: 18rem;
+        height: 100%;
+        max-height: 100%;
+        overflow-y: auto;
     }
     .window__title{
         -webkit-touch-callout: none;
@@ -112,7 +115,7 @@
     @media screen and (min-width: 2000px){
         .window{
             min-height: 35rem;
-            max-height: 40rem;
+            max-height: 36rem;
         }
     }
 </style>

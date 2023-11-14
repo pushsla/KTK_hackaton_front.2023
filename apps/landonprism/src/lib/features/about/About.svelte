@@ -18,7 +18,7 @@
             main={$_("landing.about.windows.money.title")}
             >
             <svelte:fragment slot="main">
-                <HackatonFaund />
+                <HackatonFaund money={stats.hackatonFound} commands={stats.hackatonWinners} offers={stats.hackatonOffers}/>
             </svelte:fragment>
         </Windowsys>
 
@@ -26,20 +26,26 @@
             back={$_("landing.about.windows.coffee.title")}
             main={$_("landing.about.windows.tasks.title")}
             >
-
+            <svelte:fragment slot="main">
+                <HackatonTasks />
+            </svelte:fragment>
         </Windowsys>
 
         <Windowsys
             back={$_("landing.about.windows.company.title")}
             main={$_("landing.about.windows.lections.title")}
             >
-
+            <svelte:fragment slot="main">
+                <Speakers speakers={speakers} />
+            </svelte:fragment>
         </Windowsys>
 
         <Windowsys
             main={$_("landing.about.windows.targetclick.title")}
             >
-
+            <svelte:fragment slot="main">
+                <Testyourself />
+            </svelte:fragment>
         </Windowsys>
     </section>
 </template>
@@ -49,6 +55,24 @@
     import Windowsys from "$lib/common/winsys/Windowsys.svelte"
 
     import HackatonFaund from "./components/HackatonFaund.svelte"
+    import HackatonTasks from "./components/HackatonTasks.svelte"
+    import Speakers from "./components/Speakers.svelte"
+    import Testyourself from "./components/Testyourself.svelte"
+
+    export let stats: {
+        id: number,
+        registrationOpen: boolean,
+        registerDeadline: Date,
+        hackatonFound: number,
+        hackatonWinners: number,
+        hackatonOffers: number,
+    }
+
+    export let speakers: {
+        id: number,
+        name: string,
+        company: string
+    }[]
 
 </script>
 

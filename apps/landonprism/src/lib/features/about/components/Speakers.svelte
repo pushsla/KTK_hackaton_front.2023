@@ -10,27 +10,19 @@
 
 <template>
     <ul class="ul">
-        <li class="li">
-            <span class="preambule">{money}</span>
-            <span class="ambule">{$_("landing.about.windows.money.text.1")}</span>
-        </li>
-        <li class="li">
-            <span class="preambule">{commands}</span>
-            <span class="ambule">{$_("landing.about.windows.money.text.2")}</span>
-        </li>
-        <li class="li">
-            <span class="preambule">{offers}</span>
-            <span class="ambule">{$_("landing.about.windows.money.text.3")}</span>
-        </li>
+        {#each speakers as sp}
+            <li class="li">
+                <span class="ambule">{sp.name}</span>
+                <span class="postambule">{sp.company}</span>
+            </li>
+        {/each}
     </ul>
 </template>
 
 <script lang="ts">
     import {_} from "svelte-i18n"
 
-    export let money: number
-    export let commands: number
-    export let offers: number
+    export let speakers: {id: number, name: string, company: string}[] = []
 
 </script>
 
@@ -44,9 +36,9 @@
     .li {
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 5fr;
+        grid-template-columns: 3fr 2fr;
     }
-    .preambule{
+    .postambule{
         color: rgb(var(--color-primary-500));
         text-transform: uppercase;
         font-size: 1.2rem;

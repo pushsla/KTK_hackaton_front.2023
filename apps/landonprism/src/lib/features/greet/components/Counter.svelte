@@ -18,6 +18,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
+    export let deadlineTime: Date
+
     let timeSet: boolean = false
     let timeSec: number = 1000000
     let days = 0
@@ -52,7 +54,11 @@
 
     }
 
-    onMount(async () => countdown())
+    onMount(async () => {
+        timeSet = true
+        timeSec = Math.floor((deadlineTime.getTime() - (new Date()).getTime())/1000)
+        countdown()
+        })
 </script>
 
 <style lang="postcss">

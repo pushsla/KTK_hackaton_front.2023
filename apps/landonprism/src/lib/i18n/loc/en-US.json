@@ -65,7 +65,9 @@
                 "money": {
                     "title": "Hackaton prize faund",
                     "text": {
-                        "1": ""
+                        "1": "Tugriks",
+                        "2": "winner places",
+                        "3": "offers from #GEEK"
                     }
                 },
                 "targetclick": {
@@ -77,7 +79,10 @@
                 "tasks": {
                     "title": "Interesting and complicated challenge",
                     "text": {
-                        "1": ""
+                        "1": "10 actual AI problems",
+                        "2": "10 UI cases",
+                        "3": "5 secutiry contests",
+                        "4": "10 complex projects"
                     }
                 },
                 "under_lections": {
@@ -110,19 +115,20 @@
     },
     "registerform": {
         "title": "Registration",
+        "submit": "Submit",
         "labels": {
-            "birth": "",
-            "contact": "",
-            "contacttype": "",
-            "lastname": "",
-            "name": "",
-            "region": "",
-            "hasteam": "",
-            "teamsel": "",
-            "teamcode": "",
-            "wantteam": "",
-            "teamname": "",
-            "teamsizewarning": ""
+            "birth": "Birth date",
+            "contact": "Give us a link",
+            "contacttype": "How may we contact you?",
+            "lastname": "Last name",
+            "name": "First name",
+            "region": "Region",
+            "hasteam": "You already have a team",
+            "teamsel": "Select your team",
+            "teamcode": "Enter secret team-code",
+            "wantteam": "You want to create your team",
+            "teamname": "Choose name for your team",
+            "teamsizewarning": "Your team will be registered after it reaches at least 3 participants"
         }
     }
 }

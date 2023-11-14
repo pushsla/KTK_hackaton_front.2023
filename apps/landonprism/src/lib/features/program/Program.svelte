@@ -10,7 +10,13 @@
 <template>
     <a id="anchor_program"/>
     <section class="program">
-        <Windowsys main={$_("landing.program.programwindow.title")}></Windowsys>
+        <Windowsys main={$_("landing.program.programwindow.title")}>
+            <svelte:fragment slot="main">
+                {#each programs as p}
+                    <Program program={p} />
+                {/each}
+            </svelte:fragment>
+        </Windowsys>
         <Windowsys main={$_("landing.program.aboutuswindow.title")}></Windowsys>
     </section>
 </template>
@@ -18,6 +24,14 @@
 <script lang="ts">
     import {_} from "svelte-i18n"
     import Windowsys from "$lib/common/winsys/Windowsys.svelte"
+    import Program from "./components/Program.svelte"
+
+    export let programs: {
+        id: number,
+        date: Date,
+        title: string,
+        entries: {id: number, ambule: string, preambule: string | null, postambule: string | null, programId: number, time: Date, locale: string}[]
+    }[]
 </script>
 
 <style lang="postcss">

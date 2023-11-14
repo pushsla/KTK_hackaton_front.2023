@@ -67,6 +67,13 @@ model Reg_team{
   id Int @id @default(autoincrement())
   name String
 
+  code0 String @default("")
+  code1 String @default("")
+  code2 String @default("")
+  code3 String @default("")
+  code4 String @default("")
+  code5 String @default("")
+
   captain Reg_registration @relation(fields: [captainId], references: [id])
   captainId Int @unique
 

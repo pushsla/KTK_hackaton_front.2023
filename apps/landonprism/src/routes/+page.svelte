@@ -8,12 +8,10 @@
 -->
 
 <template>
-	<Greet />
-	<About />
-	<Program />
+	<Greet deadlineTime={data.stats.registerDeadline} />
+	<About stats={data.stats} speakers={data.speakers}/>
+	<Program programs={data.programs}/>
 	<Partners />
-
-	<Form />
 </template>
 
 
@@ -23,6 +21,9 @@
 	import Program from "$lib/features/program/Program.svelte"
 	import Partners from "$lib/features/partners/Partners.svelte"
 	import {_} from "svelte-i18n"
+
+	import type { PageData } from "./$types";
+	export let data: PageData;
 
 
 	import Form from "$lib/features/register_form/Form.svelte"

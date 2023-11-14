@@ -11,7 +11,7 @@
     <article class="greet">
         <Cow />
         <Logo />
-        <Counter />
+        <Counter deadlineTime={deadlineTime}/>
         <article class="greet__p">
             <span class="greet__p_ambule">{$_("landing.greet.desc.ambule1")}</span>
             <span class="greet__p_accent1">{$_("landing.greet.desc.accent1")}</span>
@@ -28,6 +28,8 @@
     import Cow from "./components/Cow.svelte"
     import Logo from "./components/Logo.svelte"
     import Counter from "./components/Counter.svelte"
+
+    export let deadlineTime: Date
 </script>
 
 <style lang="postcss">

@@ -10,9 +10,11 @@
 <template>
     <header class="head bg-surface-50-900-token">
         <h1 class="head__title h3">
-            {$_("landing.head.title")}<span class="title__tag text-primary-500-400-token">
-                {$_("landing.common.hashtag")}
-            </span>
+            <a href="/">
+                {$_("landing.head.title")}<span class="title__tag text-primary-500-400-token">
+                    {$_("landing.common.hashtag")}
+                </span>
+            </a>
         </h1>
         <nav class="head__nav">
             <ul class="nav__ul">
@@ -32,9 +34,9 @@
                     {$_("landing.head.nav.mobiledev_link")}
                 </a>
             </ul>
-            <button class="nav__btn btn btn-sm variant-ghost-primary text-primary-500-400-token">
+            <a href="/register" class="nav__btn btn btn-sm variant-ghost-primary text-primary-500-400-token">
                 {$_("landing.common.btnregister")}
-            </button>
+            </a>
         </nav>
     </header>
 </template>

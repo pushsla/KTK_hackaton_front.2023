@@ -14,7 +14,7 @@
             <Windowsys main={$_("landing.partners.windowtitle")}></Windowsys>
         </div>
         <div class="targetclick">
-            <button class="btn btn-ms variant-filled-primary">{$_("landing.common.btnregister")}</button>
+            <a href="/register" class="btn btn-ms variant-filled-primary">{$_("landing.common.btnregister")}</a>
         </div>
     </section>
 </template>
@@ -28,6 +28,7 @@
     .partners {
         width: 100vw;
         height: fit-content;
+        margin-top: 5rem;
     }
     .partners__windows{
         display: grid;
