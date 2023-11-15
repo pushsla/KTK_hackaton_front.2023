@@ -82,7 +82,7 @@ export const actions = {
                 }
             });
 
-            const resp = bot.sendNotification(newreg.firstName + " " + newreg.lastName);
+            const resp = bot.sendNotification(newreg.firstName);
         }
 
         throw redirect(303, "/");

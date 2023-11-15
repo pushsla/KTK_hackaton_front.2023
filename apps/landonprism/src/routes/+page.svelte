@@ -11,7 +11,7 @@
 	<Greet deadlineTime={data.stats.registerDeadline} />
 	<About stats={data.stats} speakers={data.speakers}/>
 	<Program programs={data.programs}/>
-	<Partners />
+	<Partners partners={data.partners}/>
 </template>
 
 
